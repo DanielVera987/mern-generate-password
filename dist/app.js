@@ -15,6 +15,8 @@ var _morgan = _interopRequireDefault(require("morgan"));
 
 var _cors = _interopRequireDefault(require("cors"));
 
+var _path = _interopRequireDefault(require("path"));
+
 var _index = _interopRequireDefault(require("./routes/index"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -27,15 +29,12 @@ app.use(_express["default"].urlencoded({
   extended: false
 }));
 app.use('/generate', _index["default"]);
+app.use(_express["default"]["static"](_path["default"].resolve(__dirname, "../client/build")));
+app.get("*", function (req, res) {
+  res.sendFile(_path["default"].resolve(__dirname, "../client/build", "index.html"));
+});
 app.use(_errors.error404Handler);
 app.use((0, _celebrate.errors)());
 app.use(_errors.errorHandler);
-
-var path = require("path");
-
-app.use(_express["default"]["static"](path.resolve(__dirname, "../client/build")));
-app.get("*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
-});
 var _default = app;
 exports["default"] = _default;
