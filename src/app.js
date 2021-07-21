@@ -19,4 +19,12 @@ app.use(error404Handler);
 app.use(errors());
 app.use(errorHandler);
 
+const path = require("path");
+
+app.use(express.static(path.resolve(__dirname, "../client/build")));
+
+app.get("*", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+});
+
 export default app;

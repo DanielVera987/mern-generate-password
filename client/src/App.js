@@ -8,7 +8,7 @@ const initialGenerate = {
   uppercase: true,
 };
 
-const url = 'http://localhost:5000/generate';
+const url = '/generate';
 
 function App() {
   const [numberCharacters, setNumberCharacters] = useState(5);

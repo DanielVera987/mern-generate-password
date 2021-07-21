@@ -30,5 +30,12 @@ app.use('/generate', _index["default"]);
 app.use(_errors.error404Handler);
 app.use((0, _celebrate.errors)());
 app.use(_errors.errorHandler);
+
+var path = require("path");
+
+app.use(_express["default"]["static"](path.resolve(__dirname, "../client/build")));
+app.get("*", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+});
 var _default = app;
 exports["default"] = _default;

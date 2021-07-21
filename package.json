@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require @babel/register tests/*.test.js",
-    "start": "nodemon --inspect --exec babel-node src/server.js",
-    "build": "babel src --out-dir dist",
-    "serve": "node dist/server.js"
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "serve": "nodemon --inspect --exec babel-node src/server.js",
+    "start": "node dist/server.js",
+    "build-server": "babel src --out-dir dist",
+    "test": "mocha --require @babel/register tests/*.test.js"
   },
   "keywords": [],
   "author": "",
