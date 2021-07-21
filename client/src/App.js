@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 const initialGenerate = {
@@ -14,6 +14,8 @@ function App() {
   const [numberCharacters, setNumberCharacters] = useState(5);
   const [options, setOptions] = useState(initialGenerate);
   const [password, setPassword] = useState();
+  const [copySuccess, setCopySuccess] = useState(null);
+  const passwordRef = useRef(null);
 
   const increment = (e) => {
     setNumberCharacters(numberCharacters + 1);
@@ -41,6 +43,15 @@ function App() {
     });
 
     return res.json();
+  };
+
+  const copyToClipboard = (e) => {
+    passwordRef.current.select();
+    document.execCommand('copy');
+    setCopySuccess('Copied!');
+    setTimeout(() => {
+      setCopySuccess(null);
+    }, 2000);
   };
 
   useEffect(() => {
@@ -110,8 +121,14 @@ function App() {
           <div>
             <button type="submit" className="btn" id="btn-generate" onClick={handleGenerate} value="Generar">Generar <i className="fas fa-lock"></i></button>
 
-            <input type="text" id="input-password" value={password} />
+            <input type="text" id="input-password" ref={passwordRef} onClick={copyToClipboard} value={password} />
           </div>
+
+          {copySuccess ? (
+            <div>
+              <p>Copiado!!</p>
+            </div>
+          ) : ''}
           <br />
         </section>
       </div>

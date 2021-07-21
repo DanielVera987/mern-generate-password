@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   margin: 20px auto;
+  padding: 20px;
   max-width: 400px;
   color: #fff;
 }
@@ -10,7 +11,7 @@
 /*******************************************/
 /*               Card Title                */
 /*******************************************/
-.card-title{
+.card-title {
   text-align: center;
 }
 
@@ -35,36 +36,36 @@
 }
 
 .card-body input {
-	text-align: center;
-	border: none;
+  text-align: center;
+  border: none;
 }
 
-.card-body div{
+.card-body div {
   display: flex;
   justify-content: space-evenly;
 }
 
 .card-body .btn {
-	width: 100%;
-	background: #127eb1;
-	color: #fff;
-	display: inline-block;
-	height: 40px;
-	vertical-align: top;
-	font-size: 16px;
-	text-align: center;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	transition: all .3s ease;
+  width: 100%;
+  background: #127eb1;
+  color: #fff;
+  display: inline-block;
+  height: 40px;
+  vertical-align: top;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .3s ease;
 }
 
 .card-body #btn-generate:hover {
-	background: #21b0a0;
+  background: #21b0a0;
 }
 
 #input-password {
-  width: 50%;
+  width: 100%;
   background: none;
   border: 1px solid #127eb1;
   color: #fff;
@@ -78,21 +79,27 @@
   width: 100%;
 }
 
-.card-body .inputNumeric div input{
+.card-body .inputNumeric div input {
   height: 40px;
-	width: 100%;
+  width: 100%;
   padding: 0;
-	cursor: default;
-	background: #21b0a0;
-	color: #fff;
+  cursor: default;
+  background: #21b0a0;
+  color: #fff;
 }
 
-.card-body .inputNumeric div:nth-child(1){
+.card-body .inputNumeric div:nth-child(1) {
   border-radius: 4px 0px 0px 4px;
   width: 30%;
 }
 
-.card-body .inputNumeric div:nth-child(3){
+.card-body .inputNumeric div:nth-child(3) {
   border-radius: 0px 4px 4px 0px;
   width: 30%;
 }
+
+/*********************************/
+/*        Media Querys           */
+/*********************************/
+
+@media(max-width: 300px) {}
