@@ -1,0 +1,98 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 400px;
+  color: #fff;
+}
+
+/*******************************************/
+/*               Card Title                */
+/*******************************************/
+.card-title{
+  text-align: center;
+}
+
+.card-title h1 {
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #127eb1;
+}
+
+.card-title h4 {
+  font-weight: 300;
+}
+
+/*******************************************/
+/*                Card Body                */
+/*******************************************/
+.card-body label {
+  line-height: 40px;
+  width: 100%;
+}
+
+.card-body input {
+	text-align: center;
+	border: none;
+}
+
+.card-body div{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-body .btn {
+	width: 100%;
+	background: #127eb1;
+	color: #fff;
+	display: inline-block;
+	height: 40px;
+	vertical-align: top;
+	font-size: 16px;
+	text-align: center;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all .3s ease;
+}
+
+.card-body #btn-generate:hover {
+	background: #21b0a0;
+}
+
+#input-password {
+  width: 50%;
+  background: none;
+  border: 1px solid #127eb1;
+  color: #fff;
+  font-weight: 700;
+}
+
+/*********************************/
+/*        Input Numeric          */
+/*********************************/
+.card-body .inputNumeric {
+  width: 100%;
+}
+
+.card-body .inputNumeric div input{
+  height: 40px;
+	width: 100%;
+  padding: 0;
+	cursor: default;
+	background: #21b0a0;
+	color: #fff;
+}
+
+.card-body .inputNumeric div:nth-child(1){
+  border-radius: 4px 0px 0px 4px;
+  width: 30%;
+}
+
+.card-body .inputNumeric div:nth-child(3){
+  border-radius: 0px 4px 4px 0px;
+  width: 30%;
+}
